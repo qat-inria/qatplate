@@ -1,0 +1,11 @@
+#+title: Beamer LaTeX Template for QAT
+
+* Installing
+- copy the directory =qatplate= into the working directory of your latex project
+- instead you can clone the repo or create a git subodule in the working directory of your latex project
+  
+* Example
+Look into =qatplate/example=
+
+* Credits
+Based on Hugo Thomas' template.
