@@ -69,25 +69,25 @@
    xshift=-0.40\paperwidth,yshift=-.05\paperheight
    ] at (current page.north)
    {
-     \includegraphics[height=0.05\paperwidth]{qatplate/img/qat.png}
+     \includegraphics[height=0.05\paperheight]{qatplate/img/qat.png}
    };
   \node[
    xshift=-0.13\paperwidth,yshift=-.05\paperheight
    ] at (current page.north)
    {
-     \includegraphics[height=0.05\paperwidth]{qatplate/img/ens.jpg}
+     \includegraphics[height=0.05\paperheight]{qatplate/img/ens.jpg}
    };
   \node[
    xshift=+0.14\paperwidth,yshift=-.05\paperheight
    ] at (current page.north)
    {
-     \includegraphics[height=0.05\paperwidth]{qatplate/img/cnrs.png}
+     \includegraphics[height=0.05\paperheight]{qatplate/img/cnrs.png}
    };
   \node[
    xshift=+0.40\paperwidth,yshift=-.05\paperheight
    ] at (current page.north)
    {
-     \includegraphics[height=0.05\paperwidth]{qatplate/img/inria.pdf}
+     \includegraphics[height=0.05\paperheight]{qatplate/img/inria.pdf}
    };
    
   \end{tikzpicture}
@@ -100,13 +100,13 @@
     \ifx\insertframesubtitle\@empty%
       {
       \node[anchor=south west,font=\LARGE] at 
-      (-1,-1.2) 
+      (-1,-.9) 
       {\hspace{.4cm}\textcolor{qatdarkblue}{\textbf{\insertframetitle}}};%
       }
     \else%
       {\node[anchor=south west, font=\LARGE] at 
-      (-1,-1.2) 
-      {\hspace{.4cm} {\textcolor{qatdarkblue}{\textbf{\insertframetitle:}\normalsize\ \insertframesubtitle}}};
+      (-1,-.9) 
+      {\hspace{.4cm}\textcolor{qatdarkblue}{\textbf{\insertframetitle:}\normalsize\ \insertframesubtitle}};
       }
     \fi
   \end{tikzpicture}
