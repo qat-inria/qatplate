@@ -1,0 +1,149 @@
+\mode<presentation>
+
+% Title page
+\defbeamertemplate*{title page}{qat}[1][]
+{ 
+  % \begin{tikzpicture}[remember picture, overlay]
+  %   \node[above right,inner sep=0pt] at (current page.south west)
+  %   {
+  %     \includegraphics[width=\paperwidth]{qatplate/img/bg.jpg}
+  %   };
+
+  %   \node[
+  %   xshift=0.4\paperwidth,yshift=.08\paperheight
+  %   ] at (current page.south)
+  %   {
+  %     \includegraphics[width=0.15\paperwidth]{qatplate/img/logo-noir.png}
+  %   };
+
+  %  \node[
+  %   xshift=-0.12\paperwidth,yshift=.08\paperheight
+  %   ] at (current page.south)
+  %   {
+  %     \includegraphics[width=0.15\paperwidth]{qatplate/img/LPS6_U_Sorbonne_1.png}
+  %   };
+
+  %   \node[
+  %   xshift=.14\paperwidth,yshift=.08\paperheight
+  %   ] at (current page.south)
+  %   {
+  %     \includegraphics[width=0.06\paperwidth]{qatplate/img/logo-cnrs.png}
+  %   };
+    
+  %   \node[
+  %   xshift=-.4\paperwidth,yshift=.085\paperheight
+  %   ] at (current page.south)
+  %   {
+  %     \includegraphics[width=0.15\paperwidth]{qatplate/img/inria_logo_rouge-nobg.png}
+  %   };
+  % \end{tikzpicture}%
+
+  \begin{center}
+    \begin{beamercolorbox}[wd=\paperwidth, center, sep=0em]{title page header}
+      \usebeamerfont{title}{\huge \textbf{\inserttitle}}\par%
+    \end{beamercolorbox}%
+
+    \vskip0.4cm%
+    \begin{beamercolorbox}[wd=\paperwidth, center, sep=0em]{date}
+      \usebeamerfont{author}\insertdate%
+    \end{beamercolorbox}
+
+    \vskip.8cm%
+    \begin{beamercolorbox}[wd=\paperwidth, center, sep=0em]{author}
+    % \centering
+      \usebeamerfont{author}\insertauthor%
+    \end{beamercolorbox}
+    
+    \vskip1cm%
+    \begin{beamercolorbox}[wd=\paperwidth, center, sep=0em]{subtitle}
+        \usebeamerfont{subtitle}\insertsubtitle%
+    \end{beamercolorbox}
+  \end{center}
+    
+}%
+
+\defbeamertemplate*{background}{qat}[1][]{
+  \begin{tikzpicture}[remember picture, overlay]
+
+  \node[
+   xshift=-0.40\paperwidth,yshift=-.05\paperheight
+   ] at (current page.north)
+   {
+     \includegraphics[height=0.05\paperwidth]{qatplate/img/qat.png}
+   };
+  \node[
+   xshift=-0.13\paperwidth,yshift=-.05\paperheight
+   ] at (current page.north)
+   {
+     \includegraphics[height=0.05\paperwidth]{qatplate/img/ens.jpg}
+   };
+  \node[
+   xshift=+0.14\paperwidth,yshift=-.05\paperheight
+   ] at (current page.north)
+   {
+     \includegraphics[height=0.05\paperwidth]{qatplate/img/cnrs.png}
+   };
+  \node[
+   xshift=+0.40\paperwidth,yshift=-.05\paperheight
+   ] at (current page.north)
+   {
+     \includegraphics[height=0.05\paperwidth]{qatplate/img/inria.pdf}
+   };
+   
+  \end{tikzpicture}
+}
+
+% Frame title
+\defbeamertemplate*{frametitle}{qat}[1][]
+{
+  \begin{tikzpicture}[remember picture, overlay]
+    \ifx\insertframesubtitle\@empty%
+      {
+      \node[anchor=south west,font=\LARGE] at 
+      (-1,-1.2) 
+      {\hspace{.4cm}\textcolor{qatdarkblue}{\textbf{\insertframetitle}}};%
+      }
+    \else%
+      {\node[anchor=south west, font=\LARGE] at 
+      (-1,-1.2) 
+      {\hspace{.4cm} {\textcolor{qatdarkblue}{\textbf{\insertframetitle:}\normalsize\ \insertframesubtitle}}};
+      }
+    \fi
+  \end{tikzpicture}
+}
+
+\setbeamertemplate{footnote}{
+  \makebox[1em][l]{\insertfootnotemark}\footnotesize\insertfootnotetext\par\vspace{.5em}
+}
+
+\def\Vhrulefill{\leavevmode\leaders\hrule height 0.5ex depth 
+\dimexpr-.5ex+0.4pt\hfill\kern3pt}
+
+\setbeamertemplate{footline}{%
+  \begin{beamercolorbox}[wd=\textwidth, sep=.8ex]{footline}%
+     \usebeamerfont{page number in head/foot}%
+     {
+      \color{black}%
+      \transparent{0.4}%
+        \hspace{5pt}
+        \tiny
+        \insertshortdate
+        \hspace{3pt} 
+        \Vhrulefill
+        \insertshorttitle\ |\ \insertframenumber\,/\,\inserttotalframenumber \
+        \hspace{5pt}
+    }%
+    % \space
+    % \usebeamertemplate*{page number in head/foot}
+  \end{beamercolorbox}%
+}
+
+% Remove footline / headline / nav symbols on title page
+\makeatletter
+\def\ps@navigation@titlepage{%
+  \setbeamertemplate{footline}{}
+  \setbeamertemplate{headline}{}
+  \setbeamertemplate{navigation symbols}{}
+  \@nameuse{ps@navigation}}
+\addtobeamertemplate{title page}{\thispagestyle{navigation@titlepage}}{}
+\makeatother
