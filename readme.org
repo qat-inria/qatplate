@@ -1,11 +1,20 @@
 #+title: Beamer LaTeX Template for QAT
 
 * Installing
+:PROPERTIES:
+:ID:       97932deb-7662-40c6-970e-9cbe02b80e5f
+:END:
 - copy the directory =qatplate= into the working directory of your latex project
 - instead you can clone the repo or create a git subodule in the working directory of your latex project
   
 * Example
+:PROPERTIES:
+:ID:       010eccd1-0c00-4056-93b2-251bacb255de
+:END:
 Look into =qatplate/example=
 
 * Credits
+:PROPERTIES:
+:ID:       b97043d2-da23-48cd-91b3-b4aca2f61e16
+:END:
 Based on Hugo Thomas' template.
